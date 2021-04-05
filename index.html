@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Resources -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Oleo+Script&family=Satisfy&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Now</title>
+</head>
+<body>
+    <div class="grid">
+        <div class="search input-div">
+            <input type="text" class="input95" id="searchInput" name="search" placeholder="Search for a city" autocomplete="off">
+            <div class="input-append pointer" id="searchButton">
+                <i class="fas fa-search"></i>
+            </div>    
+        </div>
+        <div class="main-card">
+            <div class="left">
+                <p id="temp">33&#176;C</p>
+                <p id="cityName">Bucuresti</p>
+                <p id="additionalInfo" class="m-0">Test</p>
+                <p id="hour">Last update: 18:00:00</p>
+            </div>
+           
+            <div class="right">
+                <p id="desc">Clouds</p>
+                <p id="img"><i class="fas fa-cloud"></i></p>
+            </div>
+        </div>
+
+
+        <div class="second-card">
+            <p id="img"></p>
+            <p id="date">18:00:00</p>
+            <p id="temp">33&#176;C</p>
+            <p id="desc">Bucuresti</p>
+            
+            <p id="additionalInfo">Test</p>
+        </div>
+        <div class="second-card">
+            <p id="img"></p>
+            <p id="date">18:00:00</p>
+            <p id="temp">33&#176;C</p>
+            <p id="desc">Bucuresti</p>
+            <p id="additionalInfo">Test</p>
+        </div>
+        <div class="second-card">
+            <p id="img"></p>
+            <p id="date">18:00:00</p>
+            <p id="temp">33&#176;C</p>
+            <p id="desc">Bucuresti</p>
+            <p id="additionalInfo">Test</p>
+        </div>
+        <div class="second-card">
+            <p id="img"></p>
+            <p id="date">18:00:00</p>
+            <p id="temp">33&#176;C</p>
+            <p id="desc">Bucuresti</p>
+            <p id="additionalInfo">Test</p>
+        </div>
+        <div class="second-card">
+            <p id="img"></p>
+            <p id="date">18:00:00</p>
+            <p id="temp">33&#176;C</p>
+            <p id="desc">Bucuresti</p>
+            <p id="additionalInfo">Test</p>
+        </div>
+        
+    </div>
+ 
+    <script src="main.js"></script>
+</body>
+</html>
