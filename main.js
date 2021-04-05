@@ -6,11 +6,11 @@ searchInput.addEventListener('input', ()=>{
 })
 
 searchButton.addEventListener('click', ()=>{
-    axios.get("http://api.openweathermap.org/data/2.5/forecast?q="+searchInput.value+"&units=metric&id=524901&appid=628b5c85ea46cec10e48734330847466")
+    axios.get("https://api.openweathermap.org/data/2.5/forecast?q="+searchInput.value+"&units=metric&id=524901&appid=628b5c85ea46cec10e48734330847466")
         .then(res=>displayData(res))
         .catch(err=>{
             searchInput.classList.add("test");
-            // console.clear();
+            console.clear();
         });
 });
 
@@ -21,7 +21,7 @@ function displayData(res){
         temp: Math.round(res.data.list[0].main.temp)+"&#176;C",
         desc: res.data.list[0].weather[0].main,
         hour: "Last updated at "+date.split(" ")[1],
-        img: "<img src='http://openweathermap.org/img/wn/"+res.data.list[0].weather[0].icon+".png' width/>",
+        img: "<img src='https://openweathermap.org/img/wn/"+res.data.list[0].weather[0].icon+".png' width/>",
         additionalInfo: 'Pressure: '+res.data.list[0].main.pressure+" Wind: "+res.data.list[0].wind.speed+"km/h",
     }
     Object.keys(data).forEach(key => {
@@ -49,7 +49,7 @@ function displaySecondCards(res, listIndex, cardNum){
         temp: Math.round(minMaxTemp.min)+"&#176;C / "+Math.round(minMaxTemp.max)+"&#176;C",
         date: nextDay.dt_txt.split(" ")[0],
         additionalInfo: 'Pressure: '+list[indexAt12].main.pressure+" Wind: "+list[indexAt12].wind.speed+"km/h",
-        img: "<img src='http://openweathermap.org/img/wn/"+list[indexAt12].weather[0].icon+".png' width/>"
+        img: "<img src='https://openweathermap.org/img/wn/"+list[indexAt12].weather[0].icon+".png' width/>"
     }
     Object.keys(data).forEach(key => {
         document.querySelectorAll(".second-card #"+key)[cardNum-1].innerHTML=data[key];
@@ -90,7 +90,7 @@ function getMinMaxTemp(list, start, end){
 
 
 navigator.geolocation.getCurrentPosition(position=>{
-    axios.get("http://api.openweathermap.org/data/2.5/forecast?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&units=metric&id=524901&appid=628b5c85ea46cec10e48734330847466")
+    axios.get("https://api.openweathermap.org/data/2.5/forecast?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&units=metric&id=524901&appid=628b5c85ea46cec10e48734330847466")
     .then(res=>displayData(res))
     .catch(err=>{
         searchInput.classList.add("test");
@@ -99,10 +99,3 @@ navigator.geolocation.getCurrentPosition(position=>{
 });
 
 
-
-// console.log(navigator.geolocation.getCurrentPosition((position)=>{
-//     console.log(position.coords.latitude)
-//     // axios.get("http://api.openweathermap.org/data/2.5/forecast?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&units=metric&id=524901&appid=628b5c85ea46cec10e48734330847466").then(res=>{
-//     //     console.log(res);
-//     // });
-// }));
