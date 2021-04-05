@@ -10,7 +10,7 @@ searchButton.addEventListener('click', ()=>{
         .then(res=>displayData(res))
         .catch(err=>{
             searchInput.classList.add("test");
-            console.clear();
+            // console.clear();
         });
 });
 
