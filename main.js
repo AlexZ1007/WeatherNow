@@ -41,6 +41,7 @@ function displaySecondCards(res, listIndex, cardNum){
     const list=res.data.list;
     let nextDay=list[listIndex];
     let indexAt12 = Math.min(listIndex+4, 39);
+    console.log(indexAt12);
 
     let minMaxTemp = getMinMaxTemp(list, listIndex, Math.min(listIndex+7,39));
     
